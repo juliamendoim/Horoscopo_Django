@@ -1,0 +1,18 @@
+{% extends "prediccion/base.html" %}
+{%block chicho%}
+
+
+{%if dic%}
+
+{%for d in dic%}
+<p>
+  Esta semana para <b>{{d.signo}}</b> será una semana de muchísimo movimiento. La luna en ofiuco no te permitirá dormir.
+</p>
+<p>
+  Tu <b>{{d.palabra}}</b> decaerá hasta límites vergonzosos. Hold in there!
+</p>
+
+
+{%endfor%}
+{%endif%}
+{%endblock%}

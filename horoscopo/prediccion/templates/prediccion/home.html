@@ -1,0 +1,28 @@
+{% extends "prediccion/base.html" %}
+
+{% block signo %}
+<form  method="post" enctype="multipart/form-data"> {%csrf_token%}
+	<h2>Elige tu signo</h2>
+		{{ form.as_p }}
+			<input type="radio" name="sign" value="acuario"> Acuario
+			<input type="radio" name="sign" value="piscis"> Piscis
+			<input type="radio" name="sign" value="aries"> Aries
+			<input type="radio" name="sign" value="acuario"> Tauro
+			<input type="radio" name="sign" value="acuario"> Géminis
+			<input type="radio" name="sign" value="acuario"> Cáncer
+			<input type="radio" name="sign" value="acuario"> Leo<br>
+			<input type="radio" name="sign" value="acuario"> Virgo
+			<input type="radio" name="sign" value="acuario"> Libra
+			<input type="radio" name="sign" value="acuario"> Escorpio
+			<input type="radio" name="sign" value="acuario"> Sagitario
+			<input type="radio" name="sign" value="acuario"> Capricornio
+            <input type="radio" name="sign" value="acuario"> Ofiuco<br>
+			
+	<h2>Elige el tema</h2>
+		<input method = "post" type="text">
+	<br />
+		<input type="submit" value="Consultar el horóscopo"> 
+	</form>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,24 @@
+body {
+	background:#DF013A;
+	color:#660033;
+	text-align: center;
+	font-family: "Gabriola";	
+}
+h1 {
+	font-size: 75px;
+	margin-top: 0px;
+	padding-top: 0px;
+	width: 1000px;
+	position: center;
+	box-shadow: 20px 20px 40px #ff8000
+	}
+div {
+	background-color: #ff8000;
+	width: 50%;
+	height: 25%;
+	margin: 20px 50px;
+	padding: 20px;
+	border:20px double;
+	display: inline-block;
+	font-size: 20px;
+}
