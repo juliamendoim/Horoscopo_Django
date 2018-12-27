@@ -1,8 +1,6 @@
 from django.db import models
 from django import forms
 
-class TextoHoroscopo(models.Model):
-    texto = models.TextField(max_length=400)
 
 class Horoscope(models.Model):
     ARIES = 'ARIES'
