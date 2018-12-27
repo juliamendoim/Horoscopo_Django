@@ -1,0 +1,15 @@
+{% extends "prediccion/base.html" %}
+
+{% block datos %}
+<form  method="post"> {%csrf_token%}
+	<div>
+		<h2>Tus datos</h2>
+			{{ form.as_p }}
+				
+	</div>
+		<br/>
+		<input type="submit" value="Acceder" name=boton> 
+	</form>
+</body>
+{% endblock %}
+</html>

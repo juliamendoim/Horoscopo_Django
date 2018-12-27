@@ -1,14 +1,14 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from prediccion.models import Horoscope
-from prediccion.forms import CargarForm
+from prediccion.models import Horoscope, Usuario
+from prediccion.forms import CargarForm, CargarUsuario
 from django.views.generic import TemplateView
 import random
 
 
 def prediccion(request):
         frases = [
-                ['Este fin de semana', 'Este mes', 'Este año', 'Estas fiestas'],
+                ['Este fin de semana', 'Este mes', 'Este año', 'Esta Navidad'],
                 ['será de muchísimo movimiento', 'es mejor evitar las distracciones', 'es mejor morirse', 'hay que disfrutar de todo al máximo'],
                 ['se arruinarán todos tus proyectos.', 'mejor ni esperar nada. Andate a dormir.', 'se cumplirán todos tus deseos.', 'será espectacular.'],
                 [' No tomes demasiada Fresita.', 'Abrigate.', 'Espectacular!', 'Adiós para siempre.']
@@ -34,3 +34,17 @@ def cargar_valores(request):
        form = CargarForm()
     
        return render(request, 'prediccion/home.html', {'form':form})
+
+def cargar_usuario(request):
+    if request.method == 'POST':
+        form = CargarUsuario(request.POST)
+        
+        if form.is_valid():
+            nuevousuario = Usuario(name=request.POST['name'], email=request.POST['email'])
+            nuevousuario.save(form)
+            return redirect('/home/')
+        
+    else:
+       form = CargarUsuario()
+    
+       return render(request, 'prediccion/index.html', {'form':form})

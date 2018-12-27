@@ -1,8 +1,17 @@
 from django.db import models
-from django import forms
 
+
+class Usuario(models.Model):
+    name = models.CharField(max_length = 30, unique = True, default = '', primary_key = True)
+    email = models.EmailField(max_length = 254, default = 'chicho@gmail.com')
+
+    def __str__(self):
+        return self.name
 
 class Horoscope(models.Model):
+
+    usuario = models.ForeignKey(Usuario, default = '', blank = True, null = True)
+
     ARIES = 'ARIES'
     TAURO = 'TAURO'
     GEMINIS = 'GEMINIS'
