@@ -6,10 +6,8 @@ from django.views.generic import TemplateView
 
 
 def prediccion(request):
-    palabra = Horoscope.objects.all()[:1]  
+    palabra = Horoscope.objects.latest('id')
     print(palabra)
-    
-    print('esto deberia ser el diccionarioOOOOOOO',palabra)
 
     return HttpResponse(render(request,"resultado.html", {'dic': palabra}))
 
