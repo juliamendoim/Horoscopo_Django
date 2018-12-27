@@ -3,7 +3,7 @@
 {%block prediccion%}
 
 
-{%if dic%}
+{%if dic.palabra == 'TRABAJO'%}
 <div>
 <p>
 Esta semana para <b>{{dic.signo}}</b> será una semana de muchísimo movimiento. Evite las distracciones.<br/> 
@@ -13,5 +13,25 @@ Esta semana para <b>{{dic.signo}}</b> será una semana de muchísimo movimiento.
   En cuanto a <b>{{dic.palabra}}</b>, descubrirás nuevos y excitantes desafíos. Negocio en puerta.
 </p>
 </div>
+{% elif dic.palabra == 'AMOR' %}
+<div>
+    <p>
+    Esta semana para <b>{{dic.signo}}</b> será una semana de muchísimo movimiento. Evite las distracciones.<br/> 
+    
+    </p>
+    <p>
+      En cuanto a <b>{{dic.palabra}}</b>, descubrirás nuevos y excitantes desafíos. Negocio en puerta.
+    </p>
+    </div>
+{% else%}
+    <div>
+        <p>
+        Esta semana para <b>{{dic.signo}}</b> será una semana de muchísimo movimiento. Evite las distracciones.<br/> 
+        
+        </p>
+        <p>
+          En cuanto a <b>{{dic.palabra}}</b>, descubrirás nuevos y excitantes desafíos. Negocio en puerta.
+        </p>
+        </div>
 {%endif%}
 {%endblock%}
